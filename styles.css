@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -17,13 +18,14 @@ body {
     position: relative;
     z-index: 2;
 }
+
 h1 {
     color: #f2ff00;
     font-size: 3em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
-    top: -120px; 
+    top: -120px;
     z-index: 2;
 }
 
@@ -39,7 +41,7 @@ h1 {
     animation: shine 2s infinite;
     transition: transform 0.3s;
     position: relative;
-    top: -120px; 
+    top: -120px;
     z-index: 1;
 }
 
@@ -47,6 +49,30 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Media Query para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: contain;
+    }
+    
+    h1 {
+        font-size: 2em; /* Reduzindo o tamanho da fonte */
+        top: -80px; /* Ajustando a posição */
+    }
+    
+    #confettiButton {
+        font-size: 1em; /* Reduzindo o tamanho da fonte */
+        padding: 5px 10px; /* Reduzindo o padding */
+        top: -80px; /* Ajustando a posição */
+    }
+    
+    /* Ajustando outros elementos se necessário */
+    .festive-text {
+        font-size: 5em; /* Reduzindo o tamanho do texto de fundo */
+    }
+    
+    /* Outros ajustes específicos para mobile podem ser adicionados aqui */
+}
 #photoContainer {
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.8);
