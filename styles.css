@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-image: url('4783701.jpg');
     background-size: cover;
+    background-position: center; /* Centralizando a imagem de fundo */
     background-repeat: no-repeat;
     position: relative;
 }
@@ -16,14 +17,24 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 600px; /* Definindo uma largura máxima */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ajustando para ocupar 100% do viewport */
 }
+
 h1 {
     color: #f2ff00;
     font-size: 3em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
-    top: -120px; 
+    top: 0; /* Removendo o deslocamento fixo */
     z-index: 2;
 }
 
@@ -39,7 +50,7 @@ h1 {
     animation: shine 2s infinite;
     transition: transform 0.3s;
     position: relative;
-    top: -120px; 
+    top: 0; /* Removendo o deslocamento fixo */
     z-index: 1;
 }
 
@@ -52,17 +63,17 @@ h1 {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 10px;
-    border: 2x solid #FFD700;
+    border: 2px solid #FFD700; /* Corrigindo a borda */
     position: relative;
     z-index: 2;
+    width: 100%; /* Ajustando para ocupar toda a largura do container */
+    max-width: 300px; /* Definindo um máximo para evitar que fique muito grande */
     text-align: center;
 }
 
 #photoContainer img {
-    max-width: 300px;
-    max-height: 300px;
-    width: auto;
-    height: auto;
+    max-width: 100%; /* Ajustando para ocupar toda a largura do container */
+    height: auto; /* Mantendo a proporção */
     border: 3px solid #FFD700;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
@@ -84,7 +95,7 @@ h1 {
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.3);
-    font-size: 10em;
+    font-size: 10vw; /* Usando vw para responsividade */
     font-family: 'Brush Script MT', cursive;
     z-index: 1;
     pointer-events: none;
@@ -94,4 +105,33 @@ h1 {
     0% { box-shadow: 0 0 10px #FFD700; }
     50% { box-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
     100% { box-shadow: 0 0 10px #FFD700; }
+}
+
+/* Media Queries para Responsividade */
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: contain; /* Ajustando para cobrir a tela em dispositivos menores */
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2em; /* Reduzindo o tamanho da fonte para telas menores */
+    }
+    
+    #confettiButton {
+        font-size: 1em;
+        padding: 8px 16px; /* Ajustando o padding para telas menores */
+    }
+    
+    #photoContainer {
+        width: 100%; /* Ajustando para ocupar toda a largura em telas menores */
+        max-width: none; /* Removendo a restrição de largura máxima */
+    }
+    
+    .festive-text {
+        font-size: 8vw; /* Ajustando para ser menor em telas menores */
+    }
 }
