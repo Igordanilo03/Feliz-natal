@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-image: url('4783701.jpg');
     background-size: cover;
+    background-position: center; /* Centralizando a imagem de fundo */
     background-repeat: no-repeat;
     position: relative;
 }
@@ -19,12 +20,17 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 20px;
-    box-sizing: border-box; /* Para garantir que o padding não afete a largura total */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustando para ocupar toda a viewport height */
 }
 
 h1 {
     color: #f2ff00;
-    font-size: 2em;
+    font-size: 2.5em; /* Aumentando o tamanho da fonte para melhor legibilidade */
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -33,8 +39,8 @@ h1 {
 }
 
 #confettiButton {
-    font-size: 1em;
-    padding: 10px 20px;
+    font-size: 1.2em; /* Aumentando o tamanho da fonte do botão */
+    padding: 15px 30px; /* Aumentando o padding do botão */
     cursor: pointer;
     background-color: #FFD700;
     color: #c8102e;
@@ -46,6 +52,7 @@ h1 {
     position: relative;
     top: 0;
     z-index: 1;
+    margin-top: 20px; /* Espaço entre h1 e o botão */
 }
 
 #confettiButton:hover {
@@ -62,7 +69,7 @@ h1 {
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.3);
-    font-size: 5em;
+    font-size: 10vw; /* Usando vw para que a fonte seja responsiva */
     font-family: 'Brush Script MT', cursive;
     z-index: 1;
     pointer-events: none;
@@ -71,7 +78,7 @@ h1 {
 /* Media Query para dispositivos móveis */
 @media only screen and (max-width: 600px) {
     body {
-        background-size: contain;
+        background-size: cover; /* Ajustando para cobrir toda a tela */
     }
     
     .container {
@@ -79,21 +86,16 @@ h1 {
     }
     
     h1 {
-        font-size: 1.5em;
+        font-size: 1.8em; /* Ajustando para telas menores */
     }
     
     #confettiButton {
-        font-size: 0.9em;
-        padding: 5px 10px;
+        font-size: 1em;
+        padding: 10px 20px;
     }
     
     .festive-text {
-        font-size: 3em;
-    }
-    
-    /* Ajustar a imagem de fundo para dispositivos móveis */
-    body {
-        background-position: center;
+        font-size: 8vw; /* Ajustando para ser menor em telas menores */
     }
 }
 
