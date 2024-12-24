@@ -1,4 +1,3 @@
-/* Base styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -17,20 +16,23 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
+    width: 100%; /* Ajustando para ocupar a largura total em dispositivos móveis */
+    max-width: 600px; /* Define um máximo para evitar que fique muito grande em telas maiores */
+    padding: 20px; /* Adicionando padding para melhorar a aparência em dispositivos móveis */
 }
 
 h1 {
     color: #f2ff00;
-    font-size: 3em;
+    font-size: 2em; /* Reduzindo o tamanho da fonte para dispositivos móveis */
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
-    top: -120px;
+    top: 0; /* Resetando a posição */
     z-index: 2;
 }
 
 #confettiButton {
-    font-size: 1.2em;
+    font-size: 1em; /* Reduzindo o tamanho da fonte */
     padding: 10px 20px;
     cursor: pointer;
     background-color: #FFD700;
@@ -41,7 +43,7 @@ h1 {
     animation: shine 2s infinite;
     transition: transform 0.3s;
     position: relative;
-    top: -120px;
+    top: 0; /* Resetando a posição */
     z-index: 1;
 }
 
@@ -49,29 +51,44 @@ h1 {
     transform: scale(1.1);
 }
 
+.festive-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 5em; /* Reduzindo o tamanho da fonte para dispositivos móveis */
+    font-family: 'Brush Script MT', cursive;
+    z-index: 1;
+    pointer-events: none;
+}
+
 /* Media Query para dispositivos móveis */
 @media only screen and (max-width: 600px) {
     body {
-        background-size: contain;
+        background-size: contain; /* Ajustando o tamanho da imagem de fundo */
+    }
+    
+    .container {
+        padding: 10px; /* Reduzindo o padding para telas menores */
     }
     
     h1 {
-        font-size: 2em; /* Reduzindo o tamanho da fonte */
-        top: -80px; /* Ajustando a posição */
+        font-size: 1.5em; /* Ajustando o tamanho da fonte para telas menores */
     }
     
     #confettiButton {
-        font-size: 1em; /* Reduzindo o tamanho da fonte */
-        padding: 5px 10px; /* Reduzindo o padding */
-        top: -80px; /* Ajustando a posição */
+        font-size: 0.9em; /* Ajustando o tamanho da fonte para telas menores */
+        padding: 5px 10px; /* Ajustando o padding para telas menores */
     }
     
-    /* Ajustando outros elementos se necessário */
     .festive-text {
-        font-size: 5em; /* Reduzindo o tamanho do texto de fundo */
+        font-size: 3em; /* Ajustando o tamanho da fonte para telas menores */
     }
-    
-    /* Outros ajustes específicos para mobile podem ser adicionados aqui */
 }
 #photoContainer {
     margin-top: 20px;
